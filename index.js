@@ -11,15 +11,12 @@ const displayWorkoutRoutine = () => {
     newWorkout.textContent = workoutInput;
     workoutList.appendChild(newWorkout);
 };
-
 document.querySelector('#submitWorkout').addEventListener('click', displayWorkoutRoutine);
 
 // ⚠️⚠️⚠️ JSL02 ⚠️⚠️⚠️
-
 const addNewGoal = () => {
     const goalInput = document.querySelector('#goalInput').value;
     const goalList = document.querySelector('#goalList');
-
     const listItems = goalList.querySelectorAll('li'); //A variable looking at all the list items of the goalList
 
     let matchFound = false; //By default no matches are found hence why it is set to false
@@ -30,7 +27,7 @@ const addNewGoal = () => {
     for (let i = 0; i < listItems.length; i++) {
         if (listItems[i].textContent === goalInput) {
             matchFound = true;
-            break;
+            break; //we use break to exit the function if match is found or when all items in the list has been looped
         }
     }
     //Now that we have checked if there are any matching items in the list to te goalInput, we write an if statement with 2 actions
@@ -46,7 +43,6 @@ const addNewGoal = () => {
 };
 // Add event listener to the goal submit button
 document.querySelector('#submitGoal').addEventListener('click', addNewGoal);
-
 // ⚠️⚠️⚠️ JSL02 ⚠️⚠️⚠️
 
 let waterIntake = 0;
